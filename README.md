@@ -26,8 +26,8 @@ Getting started
 
 1. Install Ansible 2.0 or newer on your host machine
 2. `git clone https://github.com/dsevilla/vagrant-bdge.git && cd vagrant-bdge && vagrant up`
-3. vagrant ssh
-4. ./start-{hbase,neo4j,...}.sh
+3. `vagrant ssh`
+4. `./start-{hbase,neo4j,...}.sh`
 5. PROFIT!
 
 Network and ports
