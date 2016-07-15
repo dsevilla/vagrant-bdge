@@ -1,0 +1,59 @@
+---
+- name: create HBase-related directories
+  file: path='{{ item }}' state=directory
+  with_items:
+    - '{{ hbase_data_dir }}'
+    - '{{ zookeeper_data_dir }}'
+
+# FIXME: Error in Ansible 2.
+#- name: Download and extract Hbase
+#  unarchive: src=http://ftp.rediris.es/mirror/Apache/hbase/{{ hbase_release }}/{{ hbase_archive }}
+#           dest='/home/vagrant/'
+#           creates='{{ hbase_home_dir }}'
+#           copy=no
+
+- name: check if HBase is present already
+  stat: path='{{ ansible_env.HOME }}/hbase'
+  register: hbase_present
+
+- name: download HBase release {{ hbase_release }}
+  get_url: url="http://ftp.rediris.es/mirror/Apache/hbase/{{ hbase_release }}/{{ hbase_archive }}"
+           dest="{{ ansible_env.HOME }}/{{ hbase_archive }}"
+  when: hbase_present.stat.exists == False
+
+- name: extract HBase archive
+  command: tar xzf "{{ ansible_env.HOME }}/{{ hbase_archive }}"
+           chdir='{{ ansible_env.HOME }}'
+           creates='{{ hbase_home_dir }}'
+  when: hbase_present.stat.exists == False
+
+- name: symlink HBase home directory to just hbase/
+  file: path='{{ ansible_env.HOME }}/hbase'
+        src='{{ hbase_home_dir }}'
+        state=link
+  when: hbase_present.stat.exists == False
+
+- name: delete the downloaded hbase tar file
+  file: path='{{ ansible_env.HOME }}/{{ hbase_archive }}' state=absent
+  when: hbase_present.stat.exists == False
+
+- name: write HBase config file
+  template: src=hbase-site.xml.j2
+            dest='{{ hbase_home_dir }}/conf/hbase-site.xml'
+
+- name: set JAVA_HOME environment variable for HBase
+  lineinfile: dest='{{ hbase_home_dir }}/conf/hbase-env.sh'
+              regexp='^#?\s*export JAVA_HOME='
+              line='export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre'
+              state=present
+
+- name: explicitly tell HBase to manage Zookeeper
+  lineinfile: dest='{{ hbase_home_dir }}/conf/hbase-env.sh'
+              regexp='^#?\s*export HBASE_MANAGES_ZK='
+              line='export HBASE_MANAGES_ZK=true'
+              state=present
+
+- name: write HBase start shell script
+  template: src=start-hbase.sh.j2
+            dest='{{ ansible_env.HOME }}/start-hbase.sh'
+            mode=0755

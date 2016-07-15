@@ -1,0 +1,4 @@
+---
+ssh_key: /home/vagrant/.ssh/id_rsa
+host_name: vagrant-bdge
+host_ip: 192.168.15.166

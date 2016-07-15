@@ -1,0 +1,11 @@
+- name: start HBase
+  command: ./bin/start-hbase.sh
+           chdir={{ hbase_home_dir }}
+  register: hbase_start
+  changed_when: hbase_start.stdout.find('starting master') == -1
+
+- name: start Thrift
+  command: ./bin/hbase-daemon.sh start thrift
+           chdir={{ hbase_home_dir }}
+  register: thrift_start
+  changed_when: thrift_start.stdout.find('starting thrift') == -1

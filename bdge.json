@@ -1,0 +1,13 @@
+{
+    "name": "bdge",
+    "description": "Box para la asignatura de Bases de Datos a Gran Escala. Máster BigData UMU/USC.",
+    "versions": [{
+        "version": "0.5.0",
+        "providers": [{
+                "name": "virtualbox",
+                "url": "http://neuromancer.inf.um.es:8080/bdge.box",
+                "checksum_type": "sha1",
+                "checksum": "*dummy*"
+        }]
+    }]
+}

@@ -1,0 +1,55 @@
+2016-07-14  Diego Sevilla Ruiz  <dsevilla@ditec.um.es>
+
+	* bdge.json: Version 0.5.0.
+
+2016-07-07  Diego Sevilla Ruiz  <dsevilla@ditec.um.es>
+
+	* ansible/roles/common/handlers/main.yml: Added handlers for
+	timezone update.
+
+2016-04-27  Diego Sevilla Ruiz  <dsevilla@ditec.um.es>
+
+	* ansible/roles/common/tasks/main.yml: Added pymongo to the pip
+	packages installed.
+
+2016-04-14  Diego Sevilla Ruiz  <dsevilla@ditec.um.es>
+
+	* Vagrantfile: Ubuntu 15.10.
+	Updated Phoenix binaries and Hbase version to 1.1.4.
+	Added Jupyter playbook and port forwarding for 8888.
+
+2015-12-12  Diego Sevilla Ruiz  <dsevilla@ditec.um.es>
+
+	* bdge.json: Version 0.4.6.
+
+	* ansible/roles/common/tasks/main.yml: Set the JAVA_HOME
+	environment.
+
+2015-12-09  Diego Sevilla Ruiz  <dsevilla@ditec.um.es>
+
+	* bdge.json: Version 0.4.5.
+
+	* Vagrantfile: Eliminados programas no utilizados finalmente.
+	Incrementado el límite de ficheros abiertos a 40.000 como necesita
+	Neo4j.
+
+2015-11-26  Diego Sevilla Ruiz  <dsevilla@ditec.um.es>
+
+	* bdge.json: Versión 0.4.4.
+
+	* Vagrantfile: Añadido nodejs. Puerto 3000.
+
+2015-11-21  Diego Sevilla Ruiz  <dsevilla@ditec.um.es>
+
+	* bdge.json: Versión 0.4.3.
+
+	* Vagrantfile: Permitir a mongodb ser conectado desde fuera.
+
+	* Vagrantfile: Añadir la dirección 127.0.0.1 a la configuración de
+	Cassandra.
+
+2015-11-14  Diego Sevilla Ruiz  <dsevilla@ditec.um.es>
+
+	* Vagrantfile: Add thrift-compiler and protobuf-compiler.
+
+	* bdge.json: Bump version to 0.4.1.

@@ -1,0 +1,27 @@
+---
+pig_version: 0.15.0
+pig_archive: 'pig-{{pig_version}}.tar.gz'
+pig_home_dir: '{{ansible_env.HOME}}/pig-{{pig_version}}'
+
+spark_version: 1.6.2
+spark_archive_name: 'spark-{{ spark_version }}-bin-hadoop2.6'
+spark_home_dir: '{{ansible_env.HOME}}/{{ spark_archive_name }}'
+spark_archive: '{{ spark_archive_name }}.tgz'
+
+neo4j_version: 3.0.3
+neo4j_archive: 'neo4j-community-{{neo4j_version}}-unix.tar.gz'
+neo4j_url: 'https://neo4j.com/artifact.php?name={{neo4j_archive}}'
+neo4j_home_dir: '{{ansible_env.HOME}}/neo4j-community-{{neo4j_version}}'
+
+zeppelin_version: 0.6.0
+zeppelin_archive_name: 'zeppelin-{{ zeppelin_version }}-bin-all'
+zeppelin_home_dir: '{{ansible_env.HOME}}/{{ zeppelin_archive_name }}'
+zeppelin_archive: '{{ zeppelin_archive_name }}.tgz'
+zeppelin_url: 'http://www-eu.apache.org/dist/zeppelin/zeppelin-{{zeppelin_version}}/{{zeppelin_archive}}'
+zeppelin_port: 8088
+
+hive_version: 1.2.1
+hive_archive_name: 'apache-hive-{{ hive_version }}-bin'
+hive_home_dir: '{{ansible_env.HOME}}/{{ hive_archive_name }}'
+hive_archive: '{{ hive_archive_name }}.tar.gz'
+hive_url: 'http://ftp.rediris.es/mirror/Apache/hive/hive-{{hive_version}}/{{hive_archive}}'

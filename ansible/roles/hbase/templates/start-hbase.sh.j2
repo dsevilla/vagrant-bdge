@@ -1,0 +1,5 @@
+#! /bin/sh
+
+~/hadoop/sbin/start-dfs.sh
+{{ hbase_home_dir }}/bin/start-hbase.sh
+{{ hbase_home_dir }}/bin/hbase-daemon.sh start thrift

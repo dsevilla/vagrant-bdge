@@ -1,0 +1,7 @@
+---
+hadoop_major_version: 2
+hadoop_release: hadoop-2.6.4
+hadoop_archive: '{{ hadoop_release }}.tar.gz'
+hadoop_home_dir: '{{ansible_env.HOME}}/{{ hadoop_release }}'
+hadoop_tmp_dir: '/data/hadoop'
+hadoop_fs_default_name: 'hdfs://localhost:54310'
