@@ -1,37 +1,42 @@
 vagrant-bdge
 =============
 
-A Vagrantfile to get up and running with Hadoop and HBase development.
+A Vagrantfile to get up and running with Hadoop, HBase, Spark, MySQL,
+Pig, Hive, Jupyter, MongoDB and Neo4j development.
 
 Overview
 --------
 
-The aim of this project is to set up a virtual machine ready for Hadoop and HBase
-development in just a few minutes. The VM is a Ubuntu 14.04 (trusty) box,
-which is provisioned with [Ansible](http://www.ansibleworks.com/).
+The aim of this project is to set up a virtual machine ready for
+Hadoop, HBase and friends development in just a few minutes. The VM is
+a Ubuntu 16.04 (wily) box, which is provisioned with
+[Ansible](http://www.ansibleworks.com/).
 
-After running `vagrant up`, a single HBase node is set up in pseudo-distributed
-mode, running on a single-node Hadoop HDFS filesystem. A Thrift server is also
-running, allowing access from languages outside of the JVM.
+After running `vagrant up`, a single HBase node can be started in
+pseudo-distributed mode, running on a single-node Hadoop HDFS
+filesystem. A Thrift server can be also started, allowing access from
+languages outside of the JVM.
+
+This machine is based on "vagrant-hbase" machine from
+[Zbigniew Siciarz](http://siciarz.net/). Github repository:
+[vagrant-hbase](https://github.com/zsiciarz/vagrant-hbase).
 
 Getting started
 ---------------
 
-1. install Ansible 1.4 or newer on your host machine
-2. `git clone https://github.com/zsiciarz/vagrant-bdge.git && cd vagrant-bdge && vagrant up`
-3. ????
-4. PROFIT!
+1. Install Ansible 2.0 or newer on your host machine
+2. `git clone https://github.com/dsevilla/vagrant-bdge.git && cd vagrant-bdge && vagrant up`
+3. vagrant ssh
+4. ./start-{hbase,neo4j,...}.sh
+5. PROFIT!
 
 Network and ports
 -----------------
 
-The guest machine has a private IP address 192.168.15.166. HBase-related
-ports are forwarded according to the following rule:
-
-    hostPortNumber = guestPortNumber + 100
-
-For example, HBase web UIs are available from the *host* machine at
-http://127.0.0.1:60110 (Master) and http://127.0.0.1:60130 (RegionServer).
+The guest machine has a private IP address 192.168.15.166.
+HBase-related ports are forwarded. For example, HBase web UIs are
+available from the *host* machine at http://127.0.0.1:60010 (Master)
+and http://127.0.0.1:60030 (RegionServer).
 
 Hadoop
 ------
@@ -47,8 +52,9 @@ successfully running.
 Initial data
 ------------
 
-The `create_test_table.rb` file can be loaded into HBase shell to define
-a dead simple test table with one column family `cf`. The table looks like this:
+The `create_test_table.rb` file can be loaded into HBase shell to
+define a dead simple test table with one column family `cf`. The table
+looks like this:
 
     +--------+-----------+-----------+
     | rowkey |  cf:col1  |  cf:col2  |
@@ -69,18 +75,19 @@ To load the data, execute:
 Jython
 ------
 
-A Jython interpreter is also installed in the VM. To access Java HBase API
-from Jython, you need to set the `CLASSPATH` environment variable correctly.
-HBase CLI tool can help in that matter.
+A Jython interpreter is also installed in the VM. To access Java HBase
+API from Jython, you need to set the `CLASSPATH` environment variable
+correctly. HBase CLI tool can help in that matter.
 
     vagrant ssh
     cd hbase/
     export CLASSPATH=`./bin/hbase classpath`
     jython
 
-This should drop you into Jython REPL where you can import Java classes
-and use them in a more Pythonic way. An example script that reads the data
-loaded with `create_test_table.rb` is at `/vagrant/test.py`.
+This should drop you into Jython REPL where you can import Java
+classes and use them in a more Pythonic way. An example script that
+reads the data loaded with `create_test_table.rb` is at
+`/vagrant/test.py`.
 
 Python and HappyBase
 --------------------
@@ -110,7 +117,9 @@ initial data were loaded):
 Author
 ------
 
- * [Zbigniew Siciarz](http://siciarz.net) (zbigniew at siciarz dot net)
+ * [Diego Sevilla](http://neuromancer.inf.um.es/fm) (dsevilla at um dot es)
+ * [Zbigniew Siciarz](http://siciarz.net) (zbigniew at siciarz dot
+   net) (initial author)
 
 License
 -------
