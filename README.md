@@ -2,7 +2,9 @@ vagrant-bdge
 =============
 
 A Vagrantfile to get up and running with Hadoop, HBase, Spark, MySQL,
-Pig, Hive, Jupyter, MongoDB and Neo4j development.
+Pig, Hive, Jupyter, MongoDB and Neo4j development. It is used in the
+"Bases de Datos a Gran Escala" (BDGE) (*Large Scale Databases*)
+course.
 
 Overview
 --------
