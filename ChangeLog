@@ -1,3 +1,8 @@
+2016-07-31  Diego Sevilla Ruiz  <dsevilla@ditec.um.es>
+
+	* ansible/roles/hadoop2/templates/hadoop-hdfs-site.xml.j2: Enable
+	webhdfs for hue.
+
 2016-07-14  Diego Sevilla Ruiz  <dsevilla@ditec.um.es>
 
 	* bdge.json: Version 0.5.0.
