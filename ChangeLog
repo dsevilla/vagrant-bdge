@@ -1,5 +1,9 @@
 2016-07-31  Diego Sevilla Ruiz  <dsevilla@ditec.um.es>
 
+	* ansible/roles/common/tasks/main.yml: Update sudo to become.
+	Change how authorized keys are added, because in some images this
+	file is not properly eol terminated.
+
 	* ansible/roles/hadoop2/templates/hadoop-hdfs-site.xml.j2: Enable
 	webhdfs for hue.
 

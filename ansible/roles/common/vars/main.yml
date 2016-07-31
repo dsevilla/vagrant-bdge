@@ -1,4 +1,5 @@
 ---
-ssh_key: /home/vagrant/.ssh/id_rsa
+home_dir: '{{ansible_env.HOME}}'
+ssh_key: '{{home_dir}}/.ssh/id_rsa'
 host_name: vagrant-bdge
 host_ip: 192.168.15.166
