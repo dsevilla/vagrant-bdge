@@ -1,5 +1,12 @@
 2016-08-15  Diego Sevilla Ruiz  <dsevilla@ditec.um.es>
 
+	* Vagrantfile: Update memory to 2.5 GB. Hbase + Hue had not enough
+	with 2G :(
+
+	* ansible/roles/extra/tasks/main.yml: Set the mongo service as
+	disabled not to be started at boot to leave other processes more
+	memory.
+
 	* ansible/roles/hue/templates/start-hue.sh.j2: Added to start hue.
 
 	* ansible/roles/hue/tasks/main.yml: Added the start-hue.sh script
