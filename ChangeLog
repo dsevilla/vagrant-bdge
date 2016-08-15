@@ -1,5 +1,10 @@
 2016-08-15  Diego Sevilla Ruiz  <dsevilla@ditec.um.es>
 
+	* ansible/roles/hue/templates/start-hue.sh.j2: Added to start hue.
+
+	* ansible/roles/hue/tasks/main.yml: Added the start-hue.sh script
+	installation.
+
 	* Vagrantfile: Added hue port 8000 in redirections.
 
 	* ansible/roles/common/tasks/main.yml: Misc updates sudo ->
