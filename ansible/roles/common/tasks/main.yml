@@ -39,7 +39,8 @@
     - git
     - vim
     - thrift-compiler
-  sudo: yes
+  become: yes
+  become_user: root
 
 - name: install Python client libraries for Thrift, HBase and Jupyter
   pip: name='{{ item }}' state=present

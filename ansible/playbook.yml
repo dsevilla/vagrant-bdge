@@ -6,5 +6,6 @@
     - hadoop2
     - hbase
     - extra
+    - hue
 
 # vim: ft=ansible

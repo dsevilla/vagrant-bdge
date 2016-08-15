@@ -1,0 +1,53 @@
+---
+# Based on https://github.com/gitinsky/ansible-role-hue
+
+# Git supposedly installed
+- name: clone Hue asynchronously
+  git: repo=https://github.com/cloudera/hue.git dest='{{ hue_home_dir }}'
+  poll: 0
+  async: 7200
+  register: clone_async
+
+- name: install required packages
+  apt: cache_valid_time=86400 update_cache=yes name={{ item }}
+  become: yes
+  become_user: root
+  with_items:
+      - python2.7-dev
+      - make
+      - libkrb5-dev
+      - libxml2-dev
+      - libxslt-dev
+      - libsqlite3-dev
+      - libssl-dev
+      - libldap2-dev
+      - python-pip
+      - maven
+      - libmysqlclient-dev
+      - ant
+      - gcc
+      - g++
+      - libsasl2-dev
+      - libsasl2-modules-gssapi-mit
+      - libtidy-0.99-0
+      - python-dev
+      - libffi-dev
+      - python-setuptools
+      - libgmp3-dev
+
+- name: check hue clone async status
+  async_status: jid={{ clone_async.ansible_job_id }}
+  register: async_result
+  until: async_result.finished
+  retries: 7200
+
+- fail: msg="hue clone timeout"
+  when: not async_result.finished
+
+- name: make apps
+  shell: make apps
+         chdir='{{ hue_home_dir }}'
+         creates='{{ hue_home_dir }}/build/env/bin/hue'
+
+# TODO: Change hue port
+# build/env/bin/hue runserver 0.0.0.0:8000

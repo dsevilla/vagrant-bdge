@@ -1,3 +1,12 @@
+2016-08-15  Diego Sevilla Ruiz  <dsevilla@ditec.um.es>
+
+	* Vagrantfile: Added hue port 8000 in redirections.
+
+	* ansible/roles/common/tasks/main.yml: Misc updates sudo ->
+	become.
+
+	* ansible/playbook.yml: Added the hue role.
+
 2016-07-31  Diego Sevilla Ruiz  <dsevilla@ditec.um.es>
 
 	* ansible/roles/common/tasks/main.yml: Update sudo to become.

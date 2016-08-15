@@ -49,6 +49,10 @@ Vagrant.configure("2") do |config|
   # Jupyter playbook
   config.vm.network :forwarded_port, guest: 8888, host: 8888
 
+  # Hue
+  config.vm.network :forwarded_port, guest: 8000, host: 8000
+
+
   config.ssh.forward_agent = true
 
   # increase available memory
