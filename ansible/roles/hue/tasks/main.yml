@@ -49,5 +49,7 @@
          chdir='{{ hue_home_dir }}'
          creates='{{ hue_home_dir }}/build/env/bin/hue'
 
-# TODO: Change hue port
-# build/env/bin/hue runserver 0.0.0.0:8000
+- name: create the start-hue.sh script
+  template: src=start-hue.sh.j2
+            dest='{{ ansible_env.HOME }}/start-hue.sh'
+            mode=0755
