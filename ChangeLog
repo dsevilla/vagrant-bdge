@@ -1,6 +1,6 @@
 2016-08-15  Diego Sevilla Ruiz  <dsevilla@ditec.um.es>
 
-	* Vagrantfile: Update memory to 2.5 GB. Hbase + Hue had not enough
+	* Vagrantfile: Update memory to 2.2 GB. Hbase + Hue had not enough
 	with 2G :(
 
 	* ansible/roles/extra/tasks/main.yml: Set the mongo service as
