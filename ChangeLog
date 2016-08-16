@@ -1,3 +1,9 @@
+2016-08-16  Diego Sevilla Ruiz  <dsevilla@ditec.um.es>
+
+	* ansible/roles/hue/tasks/main.yml:
+	* ansible/roles/hue/templates/hue.ini.j2: Added to include SQL
+	connection information.
+
 2016-08-15  Diego Sevilla Ruiz  <dsevilla@ditec.um.es>
 
 	* Vagrantfile: Update memory to 2.2 GB. Hbase + Hue had not enough

@@ -53,3 +53,7 @@
   template: src=start-hue.sh.j2
             dest='{{ ansible_env.HOME }}/start-hue.sh'
             mode=0755
+
+- name: create the DB connection configuration
+  template: src=hue.ini.j2
+            dest='{{ hue_home_dir }}/desktop/conf/hue.ini'
