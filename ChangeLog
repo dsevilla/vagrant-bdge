@@ -1,3 +1,8 @@
+2016-09-02  Diego Sevilla Ruiz  <dsevilla@ditec.um.es>
+
+	* ansible/roles/common/tasks/main.yml: Added scikit-learn to the
+	list of pip packages installed.
+
 2016-08-16  Diego Sevilla Ruiz  <dsevilla@ditec.um.es>
 
 	* ansible/roles/hue/tasks/main.yml:

@@ -31,6 +31,8 @@
     - python-virtualenv
     - python-software-properties
     - python-dev
+    - python-numpy
+    - python-scipy
     - debconf-utils
     - libzmq3-dev
     - zip
@@ -51,6 +53,7 @@
     - pymongo
     - ipython-sql
     - pymysql
+    - scikit-learn
   become: yes
   become_user: root
 
