@@ -13,6 +13,7 @@ Vagrant.configure("2") do |config|
   config.vm.hostname = "vagrant-bdge"
 
   config.vm.network :private_network, ip: "192.168.15.166"
+
   # Hadoop web UI ports
   config.vm.network :forwarded_port, guest: 50070, host: 50070
   config.vm.network :forwarded_port, guest: 50075, host: 50075
