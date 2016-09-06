@@ -53,6 +53,7 @@
     - pymongo
     - ipython-sql
     - pymysql
+    - mysql-python
     - scikit-learn
   become: yes
   become_user: root

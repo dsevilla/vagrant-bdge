@@ -2,6 +2,8 @@
 
 	* ansible/roles/extra/tasks/main.yml: Correcly configure Neo4j for
 	outside access.
+	* ansible/roles/common/tasks/main.yml: Add pip package
+	mysql-python to allow ipython-sql to work with mysql.
 
 2016-09-02  Diego Sevilla Ruiz  <dsevilla@ditec.um.es>
 

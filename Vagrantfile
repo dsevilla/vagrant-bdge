@@ -53,7 +53,6 @@ Vagrant.configure("2") do |config|
   # Hue
   config.vm.network :forwarded_port, guest: 8000, host: 8000
 
-
   config.ssh.forward_agent = true
 
   # increase available memory
