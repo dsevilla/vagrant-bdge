@@ -1,5 +1,7 @@
 2016-09-06  Diego Sevilla Ruiz  <dsevilla@ditec.um.es>
 
+	* ansible/roles/hbase/vars/main.yml: Bump hbase version to 1.1.6.
+
 	* ansible/roles/hadoop2/tasks/main.yml: More sudo -> become.
 
 	* ansible/roles/extra/tasks/main.yml: Correcly configure Neo4j for
