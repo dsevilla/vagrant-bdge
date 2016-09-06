@@ -120,7 +120,10 @@
   become_user: root
 
 - name: install mysql server
-  apt: pkg=mysql-server state=present force=yes
+  apt: pkg='{{ item }}' state=present force=yes
+  with_items:
+    - mysql-server
+    - libmysqlclient-dev
   become: yes
   become_user: root
 
@@ -135,6 +138,14 @@
 
 - name: stop mysql service if started in installation
   service: name=mysql state=stopped enabled=no
+  become: yes
+  become_user: root
+
+- name: install Python client libraries for MySQL
+  pip: name='{{ item }}' state=latest
+  with_items:
+    - pymysql
+    - mysql-python
   become: yes
   become_user: root
 

@@ -27,6 +27,7 @@
 - name: install essential Python packages
   apt: pkg='{{ item }}' state=present
   with_items:
+    - pkg-config
     - python-pip
     - python-virtualenv
     - python-software-properties
@@ -45,15 +46,13 @@
   become_user: root
 
 - name: install Python client libraries for Thrift, HBase and Jupyter
-  pip: name='{{ item }}' state=present
+  pip: name='{{ item }}' state=latest
   with_items:
     - thrift
     - happybase
     - jupyter
     - pymongo
     - ipython-sql
-    - pymysql
-    - mysql-python
     - scikit-learn
   become: yes
   become_user: root

@@ -1,9 +1,16 @@
 2016-09-06  Diego Sevilla Ruiz  <dsevilla@ditec.um.es>
 
+	* ansible/roles/hadoop2/tasks/main.yml: More sudo -> become.
+
 	* ansible/roles/extra/tasks/main.yml: Correcly configure Neo4j for
 	outside access.
+	Install python mysql libraries after mysql, as they use some mysql
+	scripts to configure.
+
 	* ansible/roles/common/tasks/main.yml: Add pip package
 	mysql-python to allow ipython-sql to work with mysql.
+	Added pkg-config, necessary for the compilation of some pip
+	packages (scikit-learn).
 
 2016-09-02  Diego Sevilla Ruiz  <dsevilla@ditec.um.es>
 

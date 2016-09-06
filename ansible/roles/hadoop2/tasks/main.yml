@@ -12,14 +12,16 @@
   lineinfile: dest=/etc/environment
               regexp=^HADOOP_PREFIX=
               line=HADOOP_PREFIX={{ hadoop_home_dir }}
-  sudo: yes
+  become: yes
+  become_user: root
 
 - name: add HADOOP_HOME to environment variables
   lineinfile: dest=/etc/profile.d/hadoop-env.sh
               line='export HADOOP_HOME=~/hadoop'
               state=present
               create=yes
-  sudo: yes
+  become: yes
+  become_user: root
 
 - name: set JAVA_HOME environment variable for Hadoop
   lineinfile: dest='{{ hadoop_home_dir }}/etc/hadoop/hadoop-env.sh'
