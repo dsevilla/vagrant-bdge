@@ -127,6 +127,15 @@
   become: yes
   become_user: root
 
+- name: configure mysql for outside vm access
+  lineinfile: dest=/etc/mysql/mysql.conf.d/mysqld.cnf
+              regexp='^bind-address.*'
+              line='bind-address = 0.0.0.0'
+              backrefs=no
+              state=present
+  become: yes
+  become_user: root
+
 - name: check if mysql server is running to inject the initial configuration
   shell: service mysql status
   register: _mysql_running
