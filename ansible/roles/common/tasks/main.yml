@@ -38,6 +38,7 @@
     - libzmq3-dev
     - libfreetype6-dev
     - libpng12-dev
+    - libjs-mathjax
     - zip
     - unzip
     - curl
