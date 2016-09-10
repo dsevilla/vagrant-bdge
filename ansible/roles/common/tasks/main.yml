@@ -36,6 +36,8 @@
     - python-scipy
     - debconf-utils
     - libzmq3-dev
+    - libfreetype6-dev
+    - libpng12-dev
     - zip
     - unzip
     - curl
@@ -53,6 +55,8 @@
     - jupyter
     - pymongo
     - ipython-sql
+    - pandas
+    - matplotlib
     - scikit-learn
   become: yes
   become_user: root

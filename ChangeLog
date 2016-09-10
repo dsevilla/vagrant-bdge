@@ -1,3 +1,8 @@
+2016-09-10  Diego Sevilla Ruiz  <dsevilla@ditec.um.es>
+
+	* ansible/roles/common/tasks/main.yml: Added pip packages pandas
+	and matplotlib. Added the needed Ubuntu packages for compilation.
+
 2016-09-07  Diego Sevilla Ruiz  <dsevilla@ditec.um.es>
 
 	* ansible/roles/extra/tasks/main.yml: Configure mysql for outside
