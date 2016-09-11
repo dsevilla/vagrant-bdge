@@ -1,5 +1,5 @@
 ---
-pig_version: 0.15.0
+pig_version: 0.16.0
 pig_archive: 'pig-{{pig_version}}.tar.gz'
 pig_home_dir: '{{ansible_env.HOME}}/pig-{{pig_version}}'
 

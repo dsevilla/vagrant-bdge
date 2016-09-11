@@ -1,3 +1,8 @@
+2016-09-12  Diego Sevilla Ruiz  <dsevilla@ditec.um.es>
+
+	* ansible/roles/extra/vars/main.yml (pig_version): Update to pig
+	0.16.0.
+
 2016-09-11  Diego Sevilla Ruiz  <dsevilla@ditec.um.es>
 
 	* ansible/playbook.yml: Commented out hue as we won't be using it
