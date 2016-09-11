@@ -2,6 +2,7 @@
 
 	* ansible/roles/common/tasks/main.yml: Added mathjax to allow
 	LaTeX style formulas in Jupyter Notebook.
+	Added folium python library.
 
 2016-09-10  Diego Sevilla Ruiz  <dsevilla@ditec.um.es>
 

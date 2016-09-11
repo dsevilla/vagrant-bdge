@@ -58,6 +58,7 @@
     - ipython-sql
     - pandas
     - matplotlib
+    - folium
     - scikit-learn
   become: yes
   become_user: root
