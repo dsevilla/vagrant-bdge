@@ -237,6 +237,17 @@
         state=link
   when: hive_present.stat.exists == False
 
+- name: create the auxlib directory to add the xml serde
+  file: path='{{ hive_home_dir }}/auxlib'
+        state=directory
+        mode=0755
+  when: hive_present.stat.exists == False
+
+- name: download Hive XML serde
+  get_url: url='{{hive_xml_serde_url}}'
+           dest='{{ hive_home_dir }}/auxlib/hivexmlserde.jar'
+  when: hive_present.stat.exists == False
+
 - name: write Hive start shell script
   template: src=start-hive.sh.j2
             dest='{{ ansible_env.HOME }}/start-hive.sh'
