@@ -15,6 +15,18 @@
         dest='{{ ansible_env.HOME }}/pig'
         state=link
 
+- name: Download and extract Drill
+  unarchive: src='http://apache.rediris.es/drill/drill-{{drill_version}}/{{drill_archive}}'
+             dest='/home/vagrant'
+             creates='{{ drill_home_dir }}'
+             copy=no
+
+- name: link drill directory to an easier name
+  file: src='{{ drill_home_dir }}'
+        dest='{{ ansible_env.HOME }}/drill'
+        state=link
+
+
 # - name: Download and extract Spark
 #   unarchive: src='http://ftp.cixug.es/apache/spark/spark-{{spark_version}}/{{spark_archive}}'
 #              dest='{{ansible_env.HOME}}'

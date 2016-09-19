@@ -1,3 +1,7 @@
+2016-09-20  Diego Sevilla Ruiz  <dsevilla@ditec.um.es>
+
+	* ansible/roles/extra/tasks/main.yml: Added Apache Drill.
+
 2016-09-12  Diego Sevilla Ruiz  <dsevilla@ditec.um.es>
 
 	* ansible/roles/extra/vars/main.yml (pig_version): Update to pig

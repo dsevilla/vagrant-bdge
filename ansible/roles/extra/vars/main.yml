@@ -3,6 +3,10 @@ pig_version: 0.16.0
 pig_archive: 'pig-{{pig_version}}.tar.gz'
 pig_home_dir: '{{ansible_env.HOME}}/pig-{{pig_version}}'
 
+drill_version: 1.8.0
+drill_archive: 'apache-drill-{{drill_version}}.tar.gz'
+drill_home_dir: '{{ansible_env.HOME}}/apache-drill-{{drill_version}}'
+
 spark_version: 1.6.2
 spark_archive_name: 'spark-{{ spark_version }}-bin-hadoop2.6'
 spark_home_dir: '{{ansible_env.HOME}}/{{ spark_archive_name }}'
