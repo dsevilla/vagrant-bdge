@@ -26,6 +26,11 @@
         dest='{{ ansible_env.HOME }}/drill'
         state=link
 
+- name: write Drill start shell script
+  template: src=start-drill.sh.j2
+            dest='{{ ansible_env.HOME }}/start-drill.sh'
+            mode=0755
+
 
 # - name: Download and extract Spark
 #   unarchive: src='http://ftp.cixug.es/apache/spark/spark-{{spark_version}}/{{spark_archive}}'
