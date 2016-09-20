@@ -1,5 +1,8 @@
 2016-09-20  Diego Sevilla Ruiz  <dsevilla@ditec.um.es>
 
+	* Vagrantfile: Added the 8047 port redirection for the Apache
+	Drill console.
+
 	* ansible/roles/extra/tasks/main.yml: Added Apache Drill.
 	Include the latest Hive XML Serde.
 	Add a start-drill.sh script.

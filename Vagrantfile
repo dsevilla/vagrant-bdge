@@ -53,6 +53,9 @@ Vagrant.configure("2") do |config|
   # Hue
   config.vm.network :forwarded_port, guest: 8000, host: 8000
 
+  # Apache Drill console
+  config.vm.network :forwarded_port, guest: 8047, host: 8047
+
   config.ssh.forward_agent = true
 
   # increase available memory
