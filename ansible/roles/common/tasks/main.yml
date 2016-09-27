@@ -31,6 +31,7 @@
     - python-pip
     - python-virtualenv
     - python-software-properties
+    - python-isodate
     - python-dev
     - python-numpy
     - python-seaborn
