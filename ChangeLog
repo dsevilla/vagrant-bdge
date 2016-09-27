@@ -1,3 +1,7 @@
+2016-09-27  Diego Sevilla Ruiz  <dsevilla@ditec.um.es>
+
+	* ansible/roles/common/tasks/main.yml: Added Python Seaborn.
+
 2016-09-20  Diego Sevilla Ruiz  <dsevilla@ditec.um.es>
 
 	* Vagrantfile: Added the 8047 port redirection for the Apache
