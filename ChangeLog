@@ -1,5 +1,8 @@
 2016-09-27  Diego Sevilla Ruiz  <dsevilla@ditec.um.es>
 
+	* Vagrantfile: Add a longer timeout as some downloads take some
+	time.
+
 	* ansible/roles/common/tasks/main.yml: Added Python Seaborn.
 	Added python-isodate to the list of installed packages.
 

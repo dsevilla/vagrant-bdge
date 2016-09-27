@@ -78,6 +78,9 @@ Vagrant.configure("2") do |config|
       ansible.inventory_path = "ansible/ansible_hosts"
       ansible.limit = "all"
       ansible.verbose = "vvvv"
+      ansible.raw_arguments  = [
+	  "--timeout=60"
+      ]
     end
 
   end
