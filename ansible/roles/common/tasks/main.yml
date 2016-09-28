@@ -60,6 +60,7 @@
     - ipython-sql
     - pandas
     - matplotlib
+    - bokeh
     - folium
     - scikit-learn
   become: yes
