@@ -66,23 +66,6 @@
   become: yes
   become_user: root
 
-# - name: add Java PPA
-#   apt_repository: repo=ppa:webupd8team/java state=present
-#   sudo: yes
-
-# - name: check if Java license is accepted
-#   shell: '/usr/bin/debconf-get-selections | grep oracle-java7-installer'
-#   sudo: yes
-#   register: java_license_check
-#   changed_when: java_license_check.rc != 0
-#   failed_when: java_license_check.rc > 1
-
-# - name: automatically accept Java license
-#   shell: 'echo oracle-java7-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections'
-#   sudo: yes
-#   when: java_license_check.rc != 0
-
-
 - name: install Java 8 (OpenJDK)
   apt: pkg='{{ item }}' state=present force=yes
   with_items:

@@ -32,36 +32,16 @@
             mode=0755
 
 
-# - name: Download and extract Spark
-#   unarchive: src='http://ftp.cixug.es/apache/spark/spark-{{spark_version}}/{{spark_archive}}'
-#              dest='{{ansible_env.HOME}}'
-#              creates='{{ spark_home_dir }}'
-#              copy=no
-
-- name: check if Spark is present already
-  stat: path='{{ ansible_env.HOME }}/spark'
-  register: spark_present
-
-- name: download Spark release {{ spark_version }}
-  get_url: url="http://ftp.rediris.es/mirror/Apache/spark/spark-{{spark_version}}/{{spark_archive}}"
-           dest="{{ ansible_env.HOME }}/{{ spark_archive }}"
-  when: spark_present.stat.exists == False
-
-- name: extract Spark archive
-  command: tar xzf "{{ ansible_env.HOME }}/{{ spark_archive }}"
-           chdir='{{ ansible_env.HOME }}'
-           creates='{{ spark_home_dir }}'
-  when: spark_present.stat.exists == False
+- name: Download and extract Spark
+  unarchive: src='http://ftp.cixug.es/apache/spark/spark-{{spark_version}}/{{spark_archive}}'
+             dest='{{ansible_env.HOME}}'
+             creates='{{ spark_home_dir }}'
+             copy=no
 
 - name: symlink Spark home directory to just spark/
   file: path='{{ ansible_env.HOME }}/spark'
         src='{{ spark_home_dir }}'
         state=link
-  when: spark_present.stat.exists == False
-
-- name: delete the downloaded spark tar file
-  file: path='{{ ansible_env.HOME }}/{{ spark_archive }}' state=absent
-  when: spark_present.stat.exists == False
 
 - name: write Spark start shell script
   template: src=start-spark.sh.j2
@@ -181,77 +161,35 @@
 #              creates='{{ zeppelin_home_dir }}'
 #              copy=no
 
-# - name: check if Zeppelin is present already
-#   stat: path='{{ ansible_env.HOME }}/zeppelin'
-#   register: zeppelin_present
-
-# - name: download Zeppelin release {{ zeppelin_version }}
-#   get_url: url="{{zeppelin_url}}"
-#            dest="{{ ansible_env.HOME }}/{{ zeppelin_archive }}"
-#   when: zeppelin_present.stat.exists == False
-
-# - name: extract Zeppelin archive
-#   command: tar xzf "{{ ansible_env.HOME }}/{{ zeppelin_archive }}"
-#            chdir='{{ ansible_env.HOME }}'
-#            creates='{{ zeppelin_home_dir }}'
-#   when: zeppelin_present.stat.exists == False
-
 # - name: symlink Zeppelin home directory to just zeppelin/
 #   file: path='{{ ansible_env.HOME }}/zeppelin'
 #         src='{{ zeppelin_home_dir }}'
 #         state=link
-#   when: zeppelin_present.stat.exists == False
-
-# - name: delete the downloaded zeppelin tar file
-#   file: path='{{ ansible_env.HOME }}/{{ zeppelin_archive }}' state=absent
-#   when: zeppelin_present.stat.exists == False
 
 # - name: write Zeppelin start shell script
 #   template: src=start-zeppelin.sh.j2
 #             dest='{{ ansible_env.HOME }}/start-zeppelin.sh'
 #             mode=0755
 
-# - name: Download and extract Hive
-#   unarchive: src='{{hive_url}}'
-#              dest='{{ansible_env.HOME}}'
-#              creates='{{ hive_home_dir }}'
-#              copy=no
-
-- name: check if Hive is present already
-  stat: path='{{ ansible_env.HOME }}/hive'
-  register: hive_present
-
-- name: download Hive release {{ hive_version }}
-  get_url: url="{{hive_url}}"
-           dest="{{ ansible_env.HOME }}/{{ hive_archive }}"
-  when: hive_present.stat.exists == False
-
-- name: extract Hive archive
-  command: tar xzf "{{ ansible_env.HOME }}/{{ hive_archive }}"
-           chdir='{{ ansible_env.HOME }}'
-           creates='{{ hive_home_dir }}'
-  when: hive_present.stat.exists == False
-
-- name: delete the downloaded hive tar file
-  file: path='{{ ansible_env.HOME }}/{{ hive_archive }}' state=absent
-  when: hive_present.stat.exists == False
+- name: Download and extract Hive
+  unarchive: src='{{hive_url}}'
+             dest='{{ansible_env.HOME}}'
+             creates='{{ hive_home_dir }}'
+             copy=no
 
 - name: symlink Hive home directory to just hive/
   file: path='{{ ansible_env.HOME }}/hive'
         src='{{ hive_home_dir }}'
         state=link
-  when: hive_present.stat.exists == False
 
 - name: create the auxlib directory to add the xml serde
   file: path='{{ hive_home_dir }}/auxlib'
         state=directory
         mode=0755
-  when: hive_present.stat.exists == False
 
 - name: download Hive XML serde
   get_url: url='{{hive_xml_serde_url}}'
            dest='{{ hive_home_dir }}/auxlib/hivexmlserde.jar'
-  when: hive_present.stat.exists == False
 
 - name: write Hive start shell script
   template: src=start-hive.sh.j2
