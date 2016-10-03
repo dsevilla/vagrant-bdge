@@ -1,3 +1,10 @@
+2016-10-03  Diego Sevilla Ruiz  <dsevilla@ditec.um.es>
+
+	* ansible/roles/common/tasks/main.yml: Added cython to the
+	packages installed. Apparently was installed before, but not in
+	new boxes and it is not part of the dependencies of any python
+	package.
+
 2016-09-30  Diego Sevilla Ruiz  <dsevilla@ditec.um.es>
 
 	* ansible/roles/hbase/tasks/main.yml: Some fixes and changes given

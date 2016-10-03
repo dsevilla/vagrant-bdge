@@ -28,6 +28,7 @@
   apt: pkg='{{ item }}' state=present
   with_items:
     - pkg-config
+    - cython
     - python-pip
     - python-virtualenv
     - python-software-properties
