@@ -87,6 +87,7 @@
     state: present
   with_items:
     - { regexp: '#dbms.connector.http.address=.*', line: 'dbms.connector.http.address=0.0.0.0:7474' }
+    - { regexp: '#dbms.connector.https.address=.*', line: 'dbms.connector.https.address=0.0.0.0:7474' }
     - { regexp: '^#dbms.shell.host=.*', line: 'dbms.shell.host=0.0.0.0' }
     - { regexp: '^#dbms.shell.enabled=.*', line: 'dbms.shell.enabled=true' }
 
@@ -107,6 +108,14 @@
   template: src=start-neo4j.sh.j2
             dest='{{ ansible_env.HOME }}/start-neo4j.sh'
             mode=0755
+
+- name: install Python client libraries for Neo4j
+  pip: name='{{ item }}' state=latest
+  with_items:
+    - ipython-cypher
+  become: yes
+  become_user: root
+
 
 - name: prepare MySQL environment
   shell: 'echo "mysql-server mysql-server/{{item}} password root" | debconf-set-selections'
