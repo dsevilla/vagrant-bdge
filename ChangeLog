@@ -1,3 +1,8 @@
+2016-10-07  Diego Sevilla Ruiz  <dsevilla@ditec.um.es>
+
+	* ansible/roles/common/tasks/main.yml: Added python tornado for
+	the nbagg backend.
+
 2016-10-03  Diego Sevilla Ruiz  <dsevilla@ditec.um.es>
 
 	* ansible/roles/extra/tasks/main.yml: Add HTTPS to Neo4j.

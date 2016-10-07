@@ -37,6 +37,7 @@
     - python-numpy
     - python-seaborn
     - python-scipy
+    - python-tornado
     - debconf-utils
     - libzmq3-dev
     - libfreetype6-dev
