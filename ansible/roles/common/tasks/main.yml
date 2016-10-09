@@ -28,6 +28,8 @@
   apt: pkg='{{ item }}' state=present
   with_items:
     - pkg-config
+    - sqlite3
+    - sqlite3-pcre
     - cython
     - python-pip
     - python-virtualenv

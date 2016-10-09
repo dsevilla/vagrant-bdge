@@ -1,3 +1,7 @@
+2016-10-09  Diego Sevilla Ruiz  <dsevilla@ditec.um.es>
+
+	* ansible/roles/common/tasks/main.yml: Added SQLite installation.
+
 2016-10-07  Diego Sevilla Ruiz  <dsevilla@ditec.um.es>
 
 	* ansible/roles/common/tasks/main.yml: Added python tornado for
