@@ -60,6 +60,9 @@ Vagrant.configure("2") do |config|
 
   # increase available memory
   config.vm.provider :virtualbox do |vb|
+
+     vb.linked_clone = true if Vagrant::VERSION =~ /^1.8/
+
      vb.customize ["modifyvm", :id, "--memory", "3072"]
      vb.customize ["modifyvm", :id, "--cpus", "2"]
      vb.customize ["modifyvm", :id, "--ioapic", "on"]
