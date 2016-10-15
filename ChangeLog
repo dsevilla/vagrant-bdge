@@ -1,5 +1,10 @@
 2016-10-15  Diego Sevilla Ruiz  <dsevilla@ditec.um.es>
 
+	* ansible/roles/hbase/templates/start-hbase.sh.j2: Use YARN.
+
+	* ansible/roles/hadoop2/templates/hadoop-mapred-site.xml.j2: Added
+	so that pydoop can detect that we are running in non-local mode.
+
 	* ansible/roles/common/tasks/main.yml: Ensure Java is installed as
 	the first package.
 
