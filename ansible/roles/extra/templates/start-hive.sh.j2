@@ -1,5 +1,6 @@
 #! /bin/sh
 
 ~/hadoop/sbin/start-dfs.sh
+~/hadoop/sbin/start-yarn.sh
 HADDOP_HOME=~/hadoop ~/hive/bin/hiveserver2
 # HADOOP_HOME=~/hadoop ~/hive/bin/beeline -u jdbc:hive2://127.0.0.1:10000 -n vagrant -p ''

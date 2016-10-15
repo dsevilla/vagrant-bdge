@@ -1,5 +1,9 @@
 2016-10-15  Diego Sevilla Ruiz  <dsevilla@ditec.um.es>
 
+	* ansible/roles/extra/templates/start-pig.sh.j2:
+	* ansible/roles/extra/templates/start-hive.sh.j2: Add the Yarn
+	start.
+
 	* ansible/roles/hadoop2/tasks/main.yml: Change pydoop installation
 	to after Hadoop is installed.
 
