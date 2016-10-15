@@ -1,3 +1,8 @@
+2016-10-15  Diego Sevilla Ruiz  <dsevilla@ditec.um.es>
+
+	* ansible/roles/common/tasks/main.yml: Ensure Java is installed as
+	the first package.
+
 2016-10-11  Diego Sevilla Ruiz  <dsevilla@ditec.um.es>
 
 	* Vagrantfile: Add the linked_clone option.

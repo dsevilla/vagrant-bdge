@@ -24,6 +24,25 @@
   become: yes
   become_user: root
 
+- name: install Java 8 (OpenJDK)
+  apt: pkg='{{ item }}' state=present force=yes
+  with_items:
+    - openjdk-8-jdk
+    - jython
+  become: yes
+  become_user: root
+
+- name: Set JAVA_HOME environment
+  lineinfile: dest=/etc/environment
+              line='export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64'
+              state=present
+              create=yes
+  become: yes
+  become_user: root
+
+- name: Update alternatives for Java 8
+  alternatives: name=java path=/usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java
+
 - name: install essential Python packages
   apt: pkg='{{ item }}' state=present
   with_items:
@@ -51,6 +70,7 @@
     - git
     - vim
     - thrift-compiler
+    - pydoop
   become: yes
   become_user: root
 
@@ -67,22 +87,6 @@
     - bokeh
     - folium
     - scikit-learn
-  become: yes
-  become_user: root
-
-- name: install Java 8 (OpenJDK)
-  apt: pkg='{{ item }}' state=present force=yes
-  with_items:
-    - openjdk-8-jdk
-    - jython
-  become: yes
-  become_user: root
-
-- name: Set JAVA_HOME environment
-  lineinfile: dest=/etc/profile.d/java-env.sh
-              line='export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre'
-              state=present
-              create=yes
   become: yes
   become_user: root
 
