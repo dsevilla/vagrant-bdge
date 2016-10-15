@@ -72,7 +72,6 @@
     - git
     - vim
     - thrift-compiler
-    - pydoop
   become: yes
   become_user: root
 

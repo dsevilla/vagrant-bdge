@@ -1,5 +1,8 @@
 2016-10-15  Diego Sevilla Ruiz  <dsevilla@ditec.um.es>
 
+	* ansible/roles/hadoop2/tasks/main.yml: Change pydoop installation
+	to after Hadoop is installed.
+
 	* ansible/roles/hbase/templates/start-hbase.sh.j2: Use YARN.
 
 	* ansible/roles/hadoop2/templates/hadoop-mapred-site.xml.j2: Added

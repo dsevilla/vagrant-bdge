@@ -116,7 +116,6 @@
   become: yes
   become_user: root
 
-
 - name: prepare MySQL environment
   shell: 'echo "mysql-server mysql-server/{{item}} password root" | debconf-set-selections'
   with_items:

@@ -45,3 +45,10 @@
   command: bin/hdfs namenode -format
            chdir={{ hadoop_home_dir }}
            creates={{ hadoop_tmp_dir }}
+
+- name: install Python client libraries for Hadoop
+  pip: name='{{ item }}' state=latest
+  with_items:
+    - pydoop
+  become: yes
+  become_user: root
