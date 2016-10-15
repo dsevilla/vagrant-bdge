@@ -42,6 +42,8 @@
 
 - name: Update alternatives for Java 8
   alternatives: name=java path=/usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java
+  become: yes
+  become_user: root
 
 - name: install essential Python packages
   apt: pkg='{{ item }}' state=present
