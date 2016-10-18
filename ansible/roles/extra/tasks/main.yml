@@ -31,7 +31,6 @@
             dest='{{ ansible_env.HOME }}/start-drill.sh'
             mode=0755
 
-
 - name: Download and extract Spark
   unarchive: src='http://ftp.cixug.es/apache/spark/spark-{{spark_version}}/{{spark_archive}}'
              dest='{{ansible_env.HOME}}'
@@ -46,6 +45,11 @@
 - name: write Spark start shell script
   template: src=start-spark.sh.j2
             dest='{{ ansible_env.HOME }}/start-spark.sh'
+            mode=0755
+
+- name: write PySpark start shell script
+  template: src=start-pyspark-notebook.sh.j2
+            dest='{{ ansible_env.HOME }}/start-pyspark-notebook.sh'
             mode=0755
 
 - name: install mongodb

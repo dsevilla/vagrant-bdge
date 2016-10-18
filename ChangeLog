@@ -1,3 +1,9 @@
+2016-10-18  Diego Sevilla Ruiz  <dsevilla@ditec.um.es>
+
+	* ansible/roles/extra/tasks/main.yml:
+	* ansible/roles/extra/templates/start-pyspark-notebook.sh.j2:
+	Added start script for pyspark as a jupyter notebook.
+
 2016-10-15  Diego Sevilla Ruiz  <dsevilla@ditec.um.es>
 
 	* ansible/roles/extra/templates/start-pig.sh.j2:
