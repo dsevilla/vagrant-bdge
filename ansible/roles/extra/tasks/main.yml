@@ -71,6 +71,14 @@
   become: yes
   become_user: root
 
+- name: install Python libraries for MongoDB
+  pip: name='{{ item }}' state=latest
+  with_items:
+    - pymongo
+    - mongothon
+  become: yes
+  become_user: root
+
 - name: download and extract Neo4j
   unarchive: src='{{neo4j_url}}'
              dest='{{ansible_env.HOME}}'

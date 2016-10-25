@@ -1,3 +1,8 @@
+2016-10-25  Diego Sevilla Ruiz  <dsevilla@ditec.um.es>
+
+	* ansible/roles/extra/tasks/main.yml: Install the mongothon
+	library.
+
 2016-10-18  Diego Sevilla Ruiz  <dsevilla@ditec.um.es>
 
 	* ansible/roles/common/tasks/main.yml: Added python-ipdb.

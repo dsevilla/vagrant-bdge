@@ -82,7 +82,6 @@
     - thrift
     - happybase
     - jupyter
-    - pymongo
     - ipython-sql
     - pandas
     - matplotlib
