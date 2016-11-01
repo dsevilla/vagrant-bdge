@@ -1,0 +1,4 @@
+#! /bin/sh
+
+{{spark_home_dir}}/sbin/start-master.sh
+IPYTHON=1 IPYTHON_OPTS="notebook --ip 0.0.0.0" {{spark_home_dir}}/bin/pyspark
