@@ -52,7 +52,7 @@
             dest='{{ ansible_env.HOME }}/start-pyspark-notebook.sh'
             mode=0755
 
-- name: add mongo key
+- name: add MongoDB key
   apt_key: keyserver=keyserver.ubuntu.com id=EA312927 state=present
   become: yes
   become_user: root
@@ -72,10 +72,10 @@
   become: yes
   become_user: root
 
-- name: configure mongodb for outside vm access
+- name: configure MongoDB for outside vm access
   lineinfile: dest=/etc/mongod.conf
               regexp='bindIp:.*'
-              line='  bindIp: 0.0.0.0'
+              line='  bindIp{{':'}} 0.0.0.0'
               backrefs=no
               state=present
   become: yes
