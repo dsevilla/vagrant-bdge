@@ -1,3 +1,7 @@
+2016-11-02  Diego Sevilla Ruiz  <dsevilla@ditec.um.es>
+
+	* ansible/roles/extra/tasks/main.yml: Change mongo version to 3.2.
+
 2016-10-25  Diego Sevilla Ruiz  <dsevilla@ditec.um.es>
 
 	* ansible/roles/extra/tasks/main.yml: Install the mongothon
