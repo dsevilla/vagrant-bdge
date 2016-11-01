@@ -1,5 +1,7 @@
 2016-11-02  Diego Sevilla Ruiz  <dsevilla@ditec.um.es>
 
+	* ansible/roles/hbase/vars/main.yml: Update to HBase 1.1.7.
+
 	* ansible/roles/extra/tasks/main.yml: Change mongo version to 3.2.
 	Fix stupid YAML limitation with inserted lines with "colon space".
 

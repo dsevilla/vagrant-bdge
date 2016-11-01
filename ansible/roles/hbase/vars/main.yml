@@ -1,5 +1,5 @@
 ---
-hbase_release: 1.1.6
+hbase_release: 1.1.7
 hbase_archive: 'hbase-{{ hbase_release }}-bin.tar.gz'
 hbase_home_dir: '{{ansible_env.HOME}}/hbase-{{ hbase_release }}'
 hbase_data_dir: /data/hbase
