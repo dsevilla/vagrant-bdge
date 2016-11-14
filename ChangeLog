@@ -1,3 +1,10 @@
+2016-11-14  Diego Sevilla Ruiz  <dsevilla@ditec.um.es>
+
+	* ansible/roles/hbase/templates/hbase-site.xml.j2: Disabled
+	distributed log splitting, as it was causing hangs in HBase. Seen
+	here: https://community.mapr.com/docs/DOC-1409, although it
+	applies to a previous version of HBase.
+
 2016-11-02  Diego Sevilla Ruiz  <dsevilla@ditec.um.es>
 
 	* ansible/roles/hbase/vars/main.yml: Update to HBase 1.1.7.
