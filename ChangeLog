@@ -1,3 +1,9 @@
+2016-11-27  Diego Sevilla Ruiz  <dsevilla@ditec.um.es>
+
+	* ansible/roles/hbase/templates/hbase-site.xml.j2: Remove the
+	changes in hbase-site as the errors were caused by the lack of
+	memory.
+
 2016-11-15  Diego Sevilla Ruiz  <dsevilla@ditec.um.es>
 
 	* ansible/roles/hbase/templates/hbase-site.xml.j2: Increase the
