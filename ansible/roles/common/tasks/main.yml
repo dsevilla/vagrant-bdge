@@ -88,8 +88,15 @@
     - bokeh
     - folium
     - scikit-learn
+    - jupyter_contrib_nbextensions
+    - jupyter_nbextensions_configurator
   become: yes
   become_user: root
+
+- name: install system-wide jupyter nbextensions
+  shell: 'jupyter-contrib-nbextension install --system --symlink'
+  become: yes
+  become_user: yes
 
 - name: fix /etc/hosts
   lineinfile: dest=/etc/hosts

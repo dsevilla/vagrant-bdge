@@ -1,3 +1,8 @@
+2016-11-30  Diego Sevilla Ruiz  <dsevilla@ditec.um.es>
+
+	* ansible/roles/common/tasks/main.yml: Install jupyter
+	nbextensions.
+
 2016-11-27  Diego Sevilla Ruiz  <dsevilla@ditec.um.es>
 
 	* ansible/roles/hbase/templates/hbase-site.xml.j2: Remove the
