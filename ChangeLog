@@ -1,3 +1,8 @@
+2016-12-01  Diego Sevilla Ruiz  <dsevilla@ditec.um.es>
+
+	* ansible/roles/extra/tasks/main.yml: Added the neo4j-driver
+	python pip package.
+
 2016-11-30  Diego Sevilla Ruiz  <dsevilla@ditec.um.es>
 
 	* ansible/roles/common/tasks/main.yml: Install jupyter

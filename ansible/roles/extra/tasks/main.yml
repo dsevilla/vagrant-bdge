@@ -140,6 +140,7 @@
   pip: name='{{ item }}' state=latest
   with_items:
     - ipython-cypher
+    - neo4j-driver
   become: yes
   become_user: root
 
