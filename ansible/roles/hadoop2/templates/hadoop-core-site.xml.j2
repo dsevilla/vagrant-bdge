@@ -9,4 +9,12 @@
         <name>fs.defaultFS</name>
         <value>{{ hadoop_fs_default_name }}</value>
     </property>
+    <property>
+        <name>hadoop.proxyuser.{{ hadoop_impersonate_user }}.groups</name>
+        <value>*</value>
+    </property>
+    <property>
+        <name>hadoop.proxyuser.{{ hadoop_impersonate_user }}.hosts</name>
+        <value>*</value>
+    </property>
 </configuration>

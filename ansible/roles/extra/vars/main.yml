@@ -24,7 +24,7 @@ zeppelin_archive: '{{ zeppelin_archive_name }}.tgz'
 zeppelin_url: 'http://www-eu.apache.org/dist/zeppelin/zeppelin-{{zeppelin_version}}/{{zeppelin_archive}}'
 zeppelin_port: 8088
 
-hive_version: 1.2.1
+hive_version: 2.1.1
 hive_archive_name: 'apache-hive-{{ hive_version }}-bin'
 hive_home_dir: '{{ansible_env.HOME}}/{{ hive_archive_name }}'
 hive_archive: '{{ hive_archive_name }}.tar.gz'

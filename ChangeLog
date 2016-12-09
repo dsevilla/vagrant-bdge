@@ -1,3 +1,15 @@
+2016-12-09  Diego Sevilla Ruiz  <dsevilla@ditec.um.es>
+
+	* ansible/roles/extra/templates/start-hive.sh.j2 (HIVE_CONF):
+	Added an optional parameter '--hbase' to optionally start and
+	connect to Hbase.
+
+	* ansible/roles/hadoop2/templates/hadoop-core-site.xml.j2: Allow
+	the vagrant user to impersonate others.
+
+	* ansible/roles/extra/vars/main.yml (hive_url): Bump Hive to
+	2.1.1.
+
 2016-12-01  Diego Sevilla Ruiz  <dsevilla@ditec.um.es>
 
 	* ansible/roles/extra/tasks/main.yml: Added the neo4j-driver

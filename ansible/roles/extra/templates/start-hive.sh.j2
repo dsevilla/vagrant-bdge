@@ -1,6 +1,14 @@
 #! /bin/sh
 
-~/hadoop/sbin/start-dfs.sh
-~/hadoop/sbin/start-yarn.sh
-HADDOP_HOME=~/hadoop ~/hive/bin/hiveserver2
+HIVE_CONF=
+
+if test "--hbase" = "$1"; then
+    ~/start-hbase.sh
+    HIVE_CONF='--hiveconf hbase.master=127.0.0.1:60000'
+else
+    ~/hadoop/sbin/start-dfs.sh
+    ~/hadoop/sbin/start-yarn.sh
+fi
+
+HADOOP_HOME=~/hadoop ~/hive/bin/hiveserver2 $HIVE_CONF
 # HADOOP_HOME=~/hadoop ~/hive/bin/beeline -u jdbc:hive2://127.0.0.1:10000 -n vagrant -p ''
