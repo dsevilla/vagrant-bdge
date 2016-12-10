@@ -96,7 +96,7 @@
 - name: install system-wide jupyter nbextensions
   shell: 'jupyter-contrib-nbextension install --system --symlink'
   become: yes
-  become_user: yes
+  become_user: root
 
 - name: fix /etc/hosts
   lineinfile: dest=/etc/hosts
