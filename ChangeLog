@@ -1,3 +1,8 @@
+2016-12-11  Diego Sevilla Ruiz  <dsevilla@ditec.um.es>
+
+	* ansible/roles/extra/tasks/main.yml: Fix port selection for
+	Neo4j.
+
 2016-12-09  Diego Sevilla Ruiz  <dsevilla@ditec.um.es>
 
 	* ansible/roles/extra/templates/start-hive.sh.j2 (HIVE_CONF):
