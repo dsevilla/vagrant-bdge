@@ -1,3 +1,8 @@
+2016-12-12  Diego Sevilla Ruiz  <dsevilla@ditec.um.es>
+
+	* ansible/roles/extra/tasks/main.yml: More fixes for Neo4j
+	configuration.
+
 2016-12-11  Diego Sevilla Ruiz  <dsevilla@ditec.um.es>
 
 	* ansible/roles/extra/tasks/main.yml: Fix port selection for
