@@ -113,8 +113,8 @@
     backrefs: no
     state: present
   with_items:
-    - { regexp: '#?dbms.connector.http.address=.*', line: 'dbms.connector.http.address=0.0.0.0:7474' }
-    - { regexp: '#?dbms.connector.https.address=.*', line: 'dbms.connector.https.address=0.0.0.0:7473' }
+    - { regexp: '^#?dbms.connector.http.address=.*', line: 'dbms.connector.http.address=0.0.0.0:7474' }
+    - { regexp: '^#?dbms.connector.https.address=.*', line: 'dbms.connector.https.address=0.0.0.0:7473' }
     - { regexp: '^#?dbms.shell.host=.*', line: 'dbms.shell.host=0.0.0.0' }
     - { regexp: '^#?dbms.shell.enabled=.*', line: 'dbms.shell.enabled=true' }
 
